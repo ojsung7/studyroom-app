@@ -1,24 +1,19 @@
+// src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
 import Rooms from './pages/Rooms'
+import RoomDetail from './pages/RoomDetail' // 추가
 import MyPage from './pages/MyPage'
 import Header from './components/Header'
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Header />
-        <main className="p-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/rooms" element={<Rooms />} />
-            <Route path="/mypage" element={<MyPage />} />
-          </Routes>
-        </main>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Rooms />} />
+        <Route path="/room/:id" element={<RoomDetail />} /> {/* 추가 */}
+        <Route path="/mypage" element={<MyPage />} />
+      </Routes>
     </Router>
   )
 }
-
-export default App

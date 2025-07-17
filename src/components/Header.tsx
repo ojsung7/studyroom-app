@@ -25,7 +25,7 @@ export default function Header() {
         <Link to="/">스터디룸 예약</Link>
       </h1>
       <nav className="flex items-center gap-4">
-        <Link to="/rooms" className="text-gray-700 hover:text-blue-500">룸 목록</Link>
+        {/* <Link to="/rooms" className="text-gray-700 hover:text-blue-500">룸 목록</Link> */}
         <Link to="/mypage" className="text-gray-700 hover:text-blue-500">마이페이지</Link>
         <UserInfo />
         {isLoggedIn ? <LogoutButton /> : <LoginButton />}
